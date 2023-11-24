@@ -12,6 +12,12 @@ gem 'pg', '~> 1.5', '>= 1.5.4'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+# Use jbuilder for providing JSON structures via a Builder-style DSL [https://github.com/rails/jbuilder]
+gem 'jbuilder', '~> 2.11', '>= 2.11.5'
+
+# Use Pry as your rails console [https://github.com/pry/pry-rails]
+gem 'pry-rails', '~> 0.3.9'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
