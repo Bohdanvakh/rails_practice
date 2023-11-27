@@ -1,6 +1,6 @@
 class Api::V1::CountriesController < Api::V1::ApiV1Controller
   def index
-    @countries = Country.all
+    @countries = Country.includes(:cities)
   end
 
   def create
