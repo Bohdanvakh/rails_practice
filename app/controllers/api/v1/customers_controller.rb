@@ -8,7 +8,7 @@ class Api::V1::CustomersController < Api::V1::ApiV1Controller
     if @customer.save
       render json: @customer, status: :created
     else
-      render json: "Country wasn't created :(", status: :unprocessable_entity
+      render json: "Customer wasn't created :(", status: :unprocessable_entity
     end
   end
 
