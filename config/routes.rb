@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :cities
       resources :customers
       resources :employees
+      resources :calls
+      resources :call_outcomes
     end
   end
 
