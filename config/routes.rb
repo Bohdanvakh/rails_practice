@@ -2,12 +2,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :countries
-      resources :cities
-      resources :customers
-      resources :employees
-      resources :calls
-      resources :call_outcomes
+      resources :countries, only: [:index, :create]
+      resources :cities, only: [:index, :create]
+      resources :customers, only: [:index, :create]
+      resources :employees, only: [:index, :create]
+      resources :calls, only: [:index, :create]
+      resources :call_outcomes, only: [:index, :create]
     end
   end
 
