@@ -1,6 +1,6 @@
 class Api::V1::CallOutcomesController < Api::V1::ApiV1Controller
   def index
-    @call_outcomes = CallOutcome.all
+    @call_outcomes = CallOutcome.includes(:calls)
   end
 
   def create
