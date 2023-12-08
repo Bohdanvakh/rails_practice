@@ -45,6 +45,15 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  # Use rspec-rails for testing your application [https://github.com/rspec/rspec-rails]
+  gem 'rspec-rails', '~> 6.1.0'
+
+  # Use factory_bot for creating factories for tests [https://github.com/thoughtbot/factory_bot]
+  gem 'factory_bot', '~> 6.4', '>= 6.4.2'
+
+  # Use faker for providing random information for factories [https://github.com/faker-ruby/faker]
+  gem 'faker', '~> 3.2', '>= 3.2.2'
 end
 
 group :development do
