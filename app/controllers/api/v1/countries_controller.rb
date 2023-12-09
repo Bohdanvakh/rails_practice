@@ -13,7 +13,7 @@ class Api::V1::CountriesController < Api::V1::ApiV1Controller
   end
 
   def show
-    @country = Country.find(params[:id])
+    @country = Country.includes(cities: :customers).find(params[:id])
   end
 
   private
