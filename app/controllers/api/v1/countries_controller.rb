@@ -12,6 +12,10 @@ class Api::V1::CountriesController < Api::V1::ApiV1Controller
     end
   end
 
+  def show
+    @country = Country.find(params[:id])
+  end
+
   private
 
   def country_params
