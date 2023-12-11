@@ -1,3 +1,4 @@
 class Call < ApplicationRecord
-  belongs_to :employee#, class_name: "object", foreign_key: "object_id"
+  belongs_to :employee
+  belongs_to :call_outcome
 end
