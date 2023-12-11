@@ -6,7 +6,7 @@ json.cities @country.cities do |city|
     json.extract! customer, :id, :name, :address, :next_call_date, :ts_inserted
 
     json.employees customer.calls do |call|
-      json.extract! call, :employee
+      json.extract! call, :employee, :call_outcome
     end
   end
 end
