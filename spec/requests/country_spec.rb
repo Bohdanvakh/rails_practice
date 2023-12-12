@@ -53,4 +53,24 @@ require 'rails_helper'
         end
       end
     end
+
+    describe "GET #show" do
+      context "valid country id" do
+        it 'show country data' do
+          country = create(:country)
+          country_city = create(:city, country: country)
+
+          get "/api/v1/countries/#{country.id}", as: :json
+
+          country_data = JSON.parse(response.body)
+          city_data = country_data['cities'].first
+
+          expect(response).to have_http_status(:success)
+          expect(country_data['name']).to eq(country.name)
+
+          expect(country_data['cities']).to be_an(Array)
+          expect(city_data['extract']['name']).to eq(country_city.name)
+        end
+      end
+    end
   end
