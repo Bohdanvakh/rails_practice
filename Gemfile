@@ -47,13 +47,13 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 
   # Use rspec-rails for testing your application [https://github.com/rspec/rspec-rails]
-  gem 'rspec-rails', '~> 6.1.0'
+  gem 'rspec-rails'
 
   # Use factory_bot for creating factories for tests [https://github.com/thoughtbot/factory_bot]
-  gem 'factory_bot', '~> 6.4', '>= 6.4.2'
+  gem 'factory_bot_rails'
 
   # Use faker for providing random information for factories [https://github.com/faker-ruby/faker]
-  gem 'faker', '~> 3.2', '>= 3.2.2'
+  gem 'faker', '~> 3.2'
 end
 
 group :development do
