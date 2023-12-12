@@ -59,17 +59,22 @@ require 'rails_helper'
         it 'show country data' do
           country = create(:country)
           country_city = create(:city, country: country)
+          customer = create(:customer, city: country_city)
 
           get "/api/v1/countries/#{country.id}", as: :json
 
           country_data = JSON.parse(response.body)
           city_data = country_data['cities'].first
+          customer_data = city_data['customers'].first
 
           expect(response).to have_http_status(:success)
           expect(country_data['name']).to eq(country.name)
 
           expect(country_data['cities']).to be_an(Array)
           expect(city_data['extract']['name']).to eq(country_city.name)
+
+          expect(city_data['customers']).to be_an(Array)
+          expect(customer_data['name']).to eq(customer.name)
         end
       end
     end
