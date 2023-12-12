@@ -30,4 +30,27 @@ require 'rails_helper'
         expect(country_names_and_cities).to include([country1.name, [city1.name, city2.name]], [country2.name, [city3.name]])
       end
     end
+
+    describe "POST #create" do
+      context "with valid parameters" do
+        let(:valid_params) { { name: 'CountryName', name_eng: 'CountryNameEng', code: 'CC' } }
+
+        it 'it creates a new country' do
+          post "/api/v1/countries", params: valid_params, as: :json
+
+          expect(response).to have_http_status(:created)
+          expect(JSON.parse(response.body)['name']).to eq('CountryName')
+        end
+      end
+
+      context 'with invalid parameters' do
+        let(:invalid_params) { { name: nil, name_eng: 'CountryNameEng', code: 'CC' } }
+
+        it 'does not create a new country' do
+          post "/api/v1/countries", params: invalid_params, as: :json
+
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
+      end
+    end
   end
