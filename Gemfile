@@ -54,6 +54,9 @@ group :development, :test do
 
   # Use faker for providing random information for factories [https://github.com/faker-ruby/faker]
   gem 'faker', '~> 3.2'
+
+  # Use shoulda-matchers for testing models [https://github.com/thoughtbot/shoulda-matchers]
+  gem 'shoulda-matchers', '~> 5.3'
 end
 
 group :development do
