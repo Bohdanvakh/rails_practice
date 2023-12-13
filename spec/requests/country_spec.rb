@@ -1,8 +1,6 @@
 require 'rails_helper'
 
   RSpec.describe Country, type: :request do
-    let(:country) { create(:country) }
-
     describe 'GET #index' do
       it 'returns a successful response' do
         get "/api/v1/countries", as: :json
