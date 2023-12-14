@@ -12,6 +12,10 @@ class Api::V1::CitiesController < Api::V1::ApiV1Controller
     end
   end
 
+  def show
+    @city = City.find(params[:id])
+  end
+
   private
 
   def city_params
