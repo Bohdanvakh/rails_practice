@@ -13,7 +13,7 @@ class Api::V1::CitiesController < Api::V1::ApiV1Controller
   end
 
   def show
-    @city = City.includes(:customers).find(params[:id])
+    @city = City.includes(customers: :calls).find(params[:id])
   end
 
   private
