@@ -1,5 +1,5 @@
 json.extract! @city, :id, :name
-json.country @city.country.name_eng3
+json.country @city.country.name_eng
 json.customers @city.customers do |customer|
   json.extract! customer, :name, :address
 
