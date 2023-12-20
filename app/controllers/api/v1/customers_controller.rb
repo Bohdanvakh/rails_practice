@@ -12,6 +12,10 @@ class Api::V1::CustomersController < Api::V1::ApiV1Controller
     end
   end
 
+  def show
+    @customer = Customer.includes({calls: [:call_outcome, :employee]}).find(params[:id])
+  end
+
   private
 
   def customer_params
