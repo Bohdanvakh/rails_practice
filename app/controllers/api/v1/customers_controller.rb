@@ -1,6 +1,6 @@
 class Api::V1::CustomersController < Api::V1::ApiV1Controller
   def index
-    @customers = Customer.includes(:city)
+    @customers = Customer.includes(:city, :calls)
   end
 
   def create
