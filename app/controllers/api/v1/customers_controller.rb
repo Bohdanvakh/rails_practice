@@ -12,6 +12,11 @@ class Api::V1::CustomersController < Api::V1::ApiV1Controller
     end
   end
 
+  def show
+    # @country = Country.includes(cities: {customers: {calls: [:employee, :call_outcome]}}).find(params[:id])
+    @customer = Customer.find(params[:id])
+  end
+
   private
 
   def customer_params

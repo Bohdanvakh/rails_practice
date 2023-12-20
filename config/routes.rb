@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :countries, only: [:index, :create, :show]
       resources :cities, only: [:index, :create, :show]
-      resources :customers, only: [:index, :create]
+      resources :customers, only: [:index, :create, :show]
       resources :employees, only: [:index, :create]
       resources :calls, only: [:index, :create]
       resources :call_outcomes, only: [:index, :create]
